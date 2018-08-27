@@ -251,7 +251,7 @@ function onePlayerGame() {
                     let go = document.createTextNode(comp);
                     document.getElementById('row3-col2').appendChild(go);
                     pastMoves.push('row3-col2');
-                } else if (row1col1 == turn && row3col1 == turn && row2col2 == '') {
+                } else if (row1col1 == turn && row3col1 == turn && row2col1 == '') {
                     let go = document.createTextNode(comp);
                     document.getElementById('row2-col2').appendChild(go);
                     pastMoves.push('row2-col2');
