@@ -78,103 +78,7 @@ function onePlayerGame() {
                 let row3col1 = document.getElementById('row3-col1').innerHTML;
                 let row3col2 = document.getElementById('row3-col2').innerHTML;
                 let row3col3 = document.getElementById('row3-col3').innerHTML;
-                if (row1col1 == turn && row1col2 == turn && row1col3 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row1-col3').appendChild(go);
-                    pastMoves.push('row1-col3');
-                } else if (row1col1 == turn && row2col1 == turn && row3col1 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row3-col1').appendChild(go);
-                    pastMoves.push('row3-col1');
-                } else if (row1col2 == turn && row2col2 == turn && row3col2 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row3-col2').appendChild(go);
-                    pastMoves.push('row3-col2');
-                } else if (row1col2 == turn && row1col3 == turn && row1col1 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row1-col1').appendChild(go);
-                    pastMoves.push('row1-col1');
-                } else if (row1col3 == turn && row2col3 == turn && row3col3 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row3-col3').appendChild(go);
-                    pastMoves.push('row3-col3');
-                } else if (row2col2 == turn && row2col3 == turn && row2col1 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row2-col1').appendChild(go);
-                    pastMoves.push('row2-col1');
-                } else if (row2col3 == turn && row3col3 == turn && row1col3 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row1-col3').appendChild(go);
-                    pastMoves.push('row1-col3');
-                } else if (row3col3 == turn && row3col2 == turn && row3col1 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row3-col1').appendChild(go);
-                    pastMoves.push('row3-col1');
-                } else if (row3col2 == turn && row2col2 == turn && row1col2 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row1-col3').appendChild(go);
-                    pastMoves.push('row1-col3');
-                } else if (row3col2 == turn && row3col1 == turn && row3col3 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row3-col3').appendChild(go);
-                    pastMoves.push('row3-col3');
-                } else if (row3col1 == turn && row2col1 == turn && row1col1 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row1-col1').appendChild(go);
-                    pastMoves.push('row1-col1');
-                } else if (row2col1 == turn && row2col2 == turn && row2col3 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row2-col3').appendChild(go);
-                    pastMoves.push('row2-col3');
-                } else if (row1col1 == turn && row2col2 == turn && row3col3 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row3-col3').appendChild(go);
-                    pastMoves.push('row3-col3');
-                } else if (row1col3 == turn && row2col2 == turn && row3col1 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row3-col1').appendChild(go);
-                    pastMoves.push('row3-col1');
-                } else if (row3col3 == turn && row2col2 == turn && row1col1 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row1-col1').appendChild(go);
-                    pastMoves.push('row1-col1');
-                } else if (row3col1 == turn && row2col2 == turn && row1col3 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row1-col3').appendChild(go);
-                    pastMoves.push('row1-col3');
-                } else if (row1col1 == turn && row1col3 == turn && row1col2 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row1-col2').appendChild(go);
-                    pastMoves.push('row1-col2');
-                } else if (row2col1 == turn && row2col3 == turn && row2col2== '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row2-col2').appendChild(go);
-                    pastMoves.push('row2-col2');
-                } else if (row3col1 == turn && row3col3 == turn && row3col2 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row3-col2').appendChild(go);
-                    pastMoves.push('row3-col2');
-                } else if (row1col1 == turn && row3col1 == turn && row2col2 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row2-col2').appendChild(go);
-                    pastMoves.push('row2-col2');
-                } else if (row1col2 == turn && row3col2 == turn && row2col2 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row2-col2').appendChild(go);
-                    pastMoves.push('row2-col2');
-                } else if (row1col3 == turn && row3col3 == turn && row2col3 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row2-col3').appendChild(go);
-                    pastMoves.push('row2-col3');
-                } else if (row1col1 == turn && row3col3 == turn && row2col2 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row2-col2').appendChild(go);
-                    pastMoves.push('row2-col2');
-                } else if (row1col3 == turn && row3col1 == turn && row2col2 == '') {
-                    let go = document.createTextNode(comp);
-                    document.getElementById('row2-col2').appendChild(go);
-                    pastMoves.push('row2-col2');
-                } else if (row1col1 == comp && row1col2 == comp && row1col3 == '') {
+                if (row1col1 == comp && row1col2 == comp && row1col3 == '') {
                     let go = document.createTextNode(comp);
                     document.getElementById('row1-col3').appendChild(go);
                     pastMoves.push('row1-col3');
@@ -267,6 +171,102 @@ function onePlayerGame() {
                     document.getElementById('row2-col2').appendChild(go);
                     pastMoves.push('row2-col2');
                 } else if (row1col3 == comp && row3col1 == comp && row2col2 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row2-col2').appendChild(go);
+                    pastMoves.push('row2-col2');
+                } else if (row1col1 == turn && row1col2 == turn && row1col3 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row1-col3').appendChild(go);
+                    pastMoves.push('row1-col3');
+                } else if (row1col1 == turn && row2col1 == turn && row3col1 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row3-col1').appendChild(go);
+                    pastMoves.push('row3-col1');
+                } else if (row1col2 == turn && row2col2 == turn && row3col2 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row3-col2').appendChild(go);
+                    pastMoves.push('row3-col2');
+                } else if (row1col2 == turn && row1col3 == turn && row1col1 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row1-col1').appendChild(go);
+                    pastMoves.push('row1-col1');
+                } else if (row1col3 == turn && row2col3 == turn && row3col3 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row3-col3').appendChild(go);
+                    pastMoves.push('row3-col3');
+                } else if (row2col2 == turn && row2col3 == turn && row2col1 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row2-col1').appendChild(go);
+                    pastMoves.push('row2-col1');
+                } else if (row2col3 == turn && row3col3 == turn && row1col3 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row1-col3').appendChild(go);
+                    pastMoves.push('row1-col3');
+                } else if (row3col3 == turn && row3col2 == turn && row3col1 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row3-col1').appendChild(go);
+                    pastMoves.push('row3-col1');
+                } else if (row3col2 == turn && row2col2 == turn && row1col2 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row1-col3').appendChild(go);
+                    pastMoves.push('row1-col3');
+                } else if (row3col2 == turn && row3col1 == turn && row3col3 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row3-col3').appendChild(go);
+                    pastMoves.push('row3-col3');
+                } else if (row3col1 == turn && row2col1 == turn && row1col1 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row1-col1').appendChild(go);
+                    pastMoves.push('row1-col1');
+                } else if (row2col1 == turn && row2col2 == turn && row2col3 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row2-col3').appendChild(go);
+                    pastMoves.push('row2-col3');
+                } else if (row1col1 == turn && row2col2 == turn && row3col3 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row3-col3').appendChild(go);
+                    pastMoves.push('row3-col3');
+                } else if (row1col3 == turn && row2col2 == turn && row3col1 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row3-col1').appendChild(go);
+                    pastMoves.push('row3-col1');
+                } else if (row3col3 == turn && row2col2 == turn && row1col1 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row1-col1').appendChild(go);
+                    pastMoves.push('row1-col1');
+                } else if (row3col1 == turn && row2col2 == turn && row1col3 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row1-col3').appendChild(go);
+                    pastMoves.push('row1-col3');
+                } else if (row1col1 == turn && row1col3 == turn && row1col2 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row1-col2').appendChild(go);
+                    pastMoves.push('row1-col2');
+                } else if (row2col1 == turn && row2col3 == turn && row2col2== '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row2-col2').appendChild(go);
+                    pastMoves.push('row2-col2');
+                } else if (row3col1 == turn && row3col3 == turn && row3col2 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row3-col2').appendChild(go);
+                    pastMoves.push('row3-col2');
+                } else if (row1col1 == turn && row3col1 == turn && row2col2 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row2-col2').appendChild(go);
+                    pastMoves.push('row2-col2');
+                } else if (row1col2 == turn && row3col2 == turn && row2col2 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row2-col2').appendChild(go);
+                    pastMoves.push('row2-col2');
+                } else if (row1col3 == turn && row3col3 == turn && row2col3 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row2-col3').appendChild(go);
+                    pastMoves.push('row2-col3');
+                } else if (row1col1 == turn && row3col3 == turn && row2col2 == '') {
+                    let go = document.createTextNode(comp);
+                    document.getElementById('row2-col2').appendChild(go);
+                    pastMoves.push('row2-col2');
+                } else if (row1col3 == turn && row3col1 == turn && row2col2 == '') {
                     let go = document.createTextNode(comp);
                     document.getElementById('row2-col2').appendChild(go);
                     pastMoves.push('row2-col2');
@@ -409,3 +409,4 @@ function tieCheck(cat) {
 function stopMoves() {
     document.getElementsByClassName('spot').removeAttribute('id');
 }
+
