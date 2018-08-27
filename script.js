@@ -56,7 +56,9 @@ function onePlayerGame() {
                 let turn = 'X';
                 e.target.textContent = `${turn}`;
                 let status = winCheck(turn,pastMoves,mode);
-    
+                if (status == 'stop') {
+                    //nothing
+                } else {
                 tieCheck(pastMoves);
             
                 pastMoves.push(move.id);
@@ -68,7 +70,6 @@ function onePlayerGame() {
                         }
                     })
                 })
-
                 let row1col1 = document.getElementById('row1-col1').innerHTML;
                 let row1col2 = document.getElementById('row1-col2').innerHTML;
                 let row1col3 = document.getElementById('row1-col3').innerHTML;
@@ -278,10 +279,16 @@ function onePlayerGame() {
                     pastMoves.push(`${rand}`);
                     } 
                 }
-                winCheck(comp,pastMoves,mode);
+                let status = winCheck(comp,pastMoves,mode);
+                if (status == 'stop') {
+                    // nothing
+                } else {
                 tieCheck(pastMoves);
+                c ++;
+                }
             }
-                            c ++;
+            }
+                           
 
         }
     }
@@ -310,17 +317,24 @@ function twoPlayerGame() {
         if (move.text == 'X' || move.text == 'O') {
             alert('This spot has already been taken!');
         } else if (move.text == '') {
-
-            if (i %2 === 0) {
-                let turn = 'O';
-                e.target.textContent = `${turn}`;
-                winCheck(turn,pastMoves,mode);
+            let player2 = 'O';
+            let player1 = 'X';
+            let p2status = winCheck(player2,pastMoves,mode);
+            let p1status = winCheck(player1,pastMoves,mode);
+            if(p1status == 'stop' || p2status == 'stop') {
+                // nothing
             } else {
-                let turn = 'X';
-                e.target.textContent = `${turn}`;
-                winCheck(turn,pastMoves,mode);
+                if (i %2 === 0) {
+                    let turn = 'O';
+                    e.target.textContent = `${turn}`;
+                    winCheck(turn,pastMoves,mode);
+                } else {
+                    let turn = 'X';
+                    e.target.textContent = `${turn}`;
+                    winCheck(turn,pastMoves,mode);
+                }
+                pastMoves.push(move.id);
             }
-            pastMoves.push(move.id);
         }
         tieCheck(pastMoves);
     }
@@ -340,34 +354,58 @@ function winCheck(turn,pastMoves,mode) {
 
     if (row1col1 == turn && row1col2 == turn && row1col3 == turn) {
         pastMoves.length = 0;
+        document.getElementById('row1-col1').style.color = "red";
+        document.getElementById('row1-col2').style.color = "red";
+        document.getElementById('row1-col3').style.color = "red";
         whoWins(turn,mode);
         return end;
     } else if (row1col1 == turn && row2col1 == turn && row3col1 == turn) {
         pastMoves.length = 0;
+        document.getElementById('row1-col1').style.color = "red";
+        document.getElementById('row2-col1').style.color = "red";
+        document.getElementById('row3-col1').style.color = "red";
         whoWins(turn,mode);
         return end;
     } else if (row1col1 == turn && row2col2 == turn && row3col3 == turn) {
         pastMoves.length = 0;
+        document.getElementById('row1-col1').style.color = "red";
+        document.getElementById('row2-col2').style.color = "red";
+        document.getElementById('row3-col3').style.color = "red";
         whoWins(turn,mode);
         return end;
     } else if (row1col2 == turn && row2col2 == turn && row3col2 == turn) {
         pastMoves.length = 0;
+        document.getElementById('row1-col2').style.color = "red";
+        document.getElementById('row2-col2').style.color = "red";
+        document.getElementById('row3-col2').style.color = "red";
         whoWins(turn,mode);
         return end;
     } else if (row1col3 == turn && row2col3 == turn && row3col3 == turn) {
         pastMoves.length = 0;
+        document.getElementById('row1-col3').style.color = "red";
+        document.getElementById('row2-col3').style.color = "red";
+        document.getElementById('row3-col3').style.color = "red";
         whoWins(turn,mode);
         return end;
     } else if (row1col3 == turn && row2col2 == turn && row3col1 == turn) {
         pastMoves.length = 0;
+        document.getElementById('row1-col3').style.color = "red";
+        document.getElementById('row2-col2').style.color = "red";
+        document.getElementById('row3-col1').style.color = "red";
         whoWins(turn,mode);
         return end;
     } else if (row2col1 == turn && row2col2 == turn && row2col3 == turn) {
         pastMoves.length = 0;
+        document.getElementById('row2-col1').style.color = "red";
+        document.getElementById('row2-col2').style.color = "red";
+        document.getElementById('row2-col3').style.color = "red";
         whoWins(turn,mode);
         return end;
     } else if (row3col1 == turn && row3col2 == turn && row3col3 == turn) {
-        pastMoves.length = 0;        
+        pastMoves.length = 0;
+        document.getElementById('row3-col1').style.color = "red";
+        document.getElementById('row3-col2').style.color = "red";
+        document.getElementById('row3-col3').style.color = "red";        
         whoWins(turn,mode);
         return end;
     }
@@ -378,19 +416,31 @@ function whoWins(turn,mode) {
     if (turn == 'X') {
         let winner = 'Player 1';
         let text = document.createTextNode(`${winner} Wins!`);
-        document.getElementById('whoWon').appendChild(text);
-        stopMoves();
+        let current = document.getElementById('whoWon').innerHTML;
+        if (current == 'Player 1 Wins!') {
+            // nothing
+        } else {
+            document.getElementById('whoWon').appendChild(text);
+        }
     } else if (turn == 'O') {
         if (mode == 'two player') {
             let winner = 'Player 2';
             let text = document.createTextNode(`${winner} Wins!`);
-            document.getElementById('whoWon').appendChild(text);
-            stopMoves();
+            let current = document.getElementById('whoWon').innerHTML;
+            if (current == 'Player 2 Wins!') {
+                // nothing
+            } else {
+                document.getElementById('whoWon').appendChild(text);
+            }
         } else {
             let winner = 'Computer';
             let text = document.createTextNode(`The ${winner} Wins! Try Again!`);
+            let current = document.getElementById('whoWon').innerHTML;
+            if (current == 'The Computer Wins! Try Again!') {
+                // nothing
+            } else {
             document.getElementById('whoWon').appendChild(text);
-            stopMoves();
+            }
         }
     } else {
         alert('Whoops! We seem to have had an error! Try Again.');
@@ -405,8 +455,3 @@ function tieCheck(cat) {
         document.getElementById('whoWon').appendChild(text);
     }
 }
-
-function stopMoves() {
-    document.getElementsByClassName('spot').removeAttribute('id');
-}
-
