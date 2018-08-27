@@ -451,7 +451,7 @@ function tieCheck(cat) {
     let num = cat.length;
     if (num == 9) {
         let eww = 'Its a Tie... Gross... Like Kissing your sister!';
-        let text = document.createTextNode(`${eww} Wins!`);
+        let text = document.createTextNode(`${eww}`);
         document.getElementById('whoWon').appendChild(text);
     }
 }
