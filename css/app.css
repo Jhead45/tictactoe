@@ -2,7 +2,8 @@ body {
   background-color: gainsboro; }
 
 .lowerBtns {
-  margin-top: 5%; }
+  margin-top: 1%;
+  margin-bottom: 1%; }
 
 .gameMode {
   width: 200px;

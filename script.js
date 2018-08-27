@@ -40,6 +40,7 @@ function onePlayerGame() {
     let spots = document.querySelectorAll('.spot');
         spots.forEach(function(spot) {
             spot.addEventListener("click", checkSpot); 
+            
         });
 
     function checkSpot(e) {
@@ -54,7 +55,8 @@ function onePlayerGame() {
             } else if (move.text == '') {
                 let turn = 'X';
                 e.target.textContent = `${turn}`;
-                winCheck(turn,pastMoves,mode);
+                let status = winCheck(turn,pastMoves,mode);
+    
                 tieCheck(pastMoves);
             
                 pastMoves.push(move.id);
@@ -334,57 +336,76 @@ function winCheck(turn,pastMoves,mode) {
     let row3col1= document.getElementById('row3-col1').innerHTML;
     let row3col2= document.getElementById('row3-col2').innerHTML;
     let row3col3= document.getElementById('row3-col3').innerHTML;
+    let end = 'stop';
 
     if (row1col1 == turn && row1col2 == turn && row1col3 == turn) {
         pastMoves.length = 0;
         whoWins(turn,mode);
+        return end;
     } else if (row1col1 == turn && row2col1 == turn && row3col1 == turn) {
         pastMoves.length = 0;
         whoWins(turn,mode);
+        return end;
     } else if (row1col1 == turn && row2col2 == turn && row3col3 == turn) {
         pastMoves.length = 0;
         whoWins(turn,mode);
+        return end;
     } else if (row1col2 == turn && row2col2 == turn && row3col2 == turn) {
         pastMoves.length = 0;
         whoWins(turn,mode);
+        return end;
     } else if (row1col3 == turn && row2col3 == turn && row3col3 == turn) {
         pastMoves.length = 0;
         whoWins(turn,mode);
+        return end;
     } else if (row1col3 == turn && row2col2 == turn && row3col1 == turn) {
         pastMoves.length = 0;
         whoWins(turn,mode);
+        return end;
     } else if (row2col1 == turn && row2col2 == turn && row2col3 == turn) {
         pastMoves.length = 0;
         whoWins(turn,mode);
+        return end;
     } else if (row3col1 == turn && row3col2 == turn && row3col3 == turn) {
         pastMoves.length = 0;        
         whoWins(turn,mode);
+        return end;
     }
+    
 }
 
 function whoWins(turn,mode) {
     if (turn == 'X') {
         let winner = 'Player 1';
-        alert(`${winner} wins!`)
+        let text = document.createTextNode(`${winner} Wins!`);
+        document.getElementById('whoWon').appendChild(text);
+        stopMoves();
     } else if (turn == 'O') {
         if (mode == 'two player') {
             let winner = 'Player 2';
-            alert(`${winner} wins!`)
+            let text = document.createTextNode(`${winner} Wins!`);
+            document.getElementById('whoWon').appendChild(text);
+            stopMoves();
         } else {
             let winner = 'Computer';
-            alert(`The ${winner} wins! Try again.`)
+            let text = document.createTextNode(`The ${winner} Wins! Try Again!`);
+            document.getElementById('whoWon').appendChild(text);
+            stopMoves();
         }
     } else {
         alert('Whoops! We seem to have had an error! Try Again.');
     }
-    location.reload();
 }
 
 function tieCheck(cat) {
     let num = cat.length;
     if (num == 9) {
-        alert('Its a Tie.... Gross.... Like kissing your sister!');
-        location.reload();
+        let eww = 'Its a Tie... Gross... Like Kissing your sister!';
+        let text = document.createTextNode(`${eww} Wins!`);
+        document.getElementById('whoWon').appendChild(text);
     }
 }
 
+function stopMoves() {
+    document.getElementsByClassName('spot').removeAttribute('id');
+}
