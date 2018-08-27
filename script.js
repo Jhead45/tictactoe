@@ -52,6 +52,7 @@ function onePlayerGame() {
         if (i == c + 1) {
             if (move.text == 'X' || move.text == 'O') {
                 alert('This spot has already been taken!');
+                i --;
             } else if (move.text == '') {
                 let turn = 'X';
                 e.target.textContent = `${turn}`;
