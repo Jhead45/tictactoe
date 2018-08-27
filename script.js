@@ -6,7 +6,6 @@ let move = {
 
 // set number of players for game mode
 function numOfPlayers(number) {
-    console.log('started over');
     let btn1 = document.getElementById('btn1');
     let btn2 = document.getElementById('btn2');
     btn1.remove();
@@ -35,7 +34,6 @@ function onePlayerGame() {
     let c = 0;
     let pastMoves = [];
     let availMoves = ['row1-col1', 'row1-col2', 'row1-col3', 'row2-col1', 'row2-col2', 'row2-col3', 'row3-col1', 'row3-col2', 'row3-col3'];
-    console.log(availMoves);
     let comp = 'O';
  
     let mode = 'one player';
@@ -64,14 +62,10 @@ function onePlayerGame() {
                     availMoves.forEach(function(avail) {
                         if (move == avail) {
                            let index = availMoves.indexOf(move)
-                           console.log(`this ${index}`);
                            availMoves.splice(index, 1);
-                           console.log(availMoves);
                         }
                     })
                 })
-                // availMoves.splice(0,1,move.id);
-                console.log(availMoves);
 
                 let row1col1 = document.getElementById('row1-col1').innerHTML;
                 let row1col2 = document.getElementById('row1-col2').innerHTML;
@@ -82,12 +76,10 @@ function onePlayerGame() {
                 let row3col1 = document.getElementById('row3-col1').innerHTML;
                 let row3col2 = document.getElementById('row3-col2').innerHTML;
                 let row3col3 = document.getElementById('row3-col3').innerHTML;
-                console.log(row1col1);
                 if (row1col1 == turn && row1col2 == turn && row1col3 == '') {
                     let go = document.createTextNode(comp);
                     document.getElementById('row1-col3').appendChild(go);
                     pastMoves.push('row1-col3');
-                    console.log('test');
                 } else if (row1col1 == turn && row2col1 == turn && row3col1 == '') {
                     let go = document.createTextNode(comp);
                     document.getElementById('row3-col1').appendChild(go);
@@ -279,7 +271,6 @@ function onePlayerGame() {
                 } else {
                     if (availMoves.length > 1) { 
                     var rand = availMoves[Math.floor(Math.random() * availMoves.length)];
-                    console.log(`this is ${rand}`);
                     let go = document.createTextNode(comp);
                     document.getElementById(`${rand}`).appendChild(go);
                     pastMoves.push(`${rand}`);
@@ -397,6 +388,3 @@ function tieCheck(cat) {
     }
 }
 
-// function computerMove(pastMoves) {
-
-// }
