@@ -1,0 +1,70 @@
+body {
+    background-color: gainsboro;
+}
+
+.lowerBtns {
+    margin-top: 5%;
+}
+
+.gameMode {
+   width: 200px;
+   height: 50px;
+   border-radius: 25px;
+}
+
+#gameTitle {
+    margin-top: 15px;
+    font-weight: bold;
+    color: rgb(126, 9, 9);
+}
+
+.rowz {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+.spot {
+  display : inline;
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+  text-align  : center;
+  padding     : 20px;
+  background-color:gainsboro;
+  font-size: 90px;
+  font-weight: 500;
+}
+
+#gameboard {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    max-height: 600px;
+    flex-wrap: wrap;
+    align-content: center;
+    vertical-align: center;
+    align-items: center;
+}
+
+#ticTacToe {
+    margin-top: 10px;
+    font-weight: bolder;
+    display: block;
+}
+
+.col1 {
+    border-left: 0ch;
+}
+
+.col3 {
+    border-right: 0ch;
+}
+
+.top {
+    border-top: 0ch;
+}
+
+.bottom {
+    border-bottom: 0ch;
+}
