@@ -113,8 +113,8 @@ function onePlayerGame() {
                     pastMoves.push('row3-col1');
                 } else if (row3col2 == comp && row2col2 == comp && row1col2 == '') {
                     let go = document.createTextNode(comp);
-                    document.getElementById('row1-col3').appendChild(go);
-                    pastMoves.push('row1-col3');
+                    document.getElementById('row1-col2').appendChild(go);
+                    pastMoves.push('row1-col2');
                 } else if (row3col2 == comp && row3col1 == comp && row3col3 == '') {
                     let go = document.createTextNode(comp);
                     document.getElementById('row3-col3').appendChild(go);
@@ -209,8 +209,8 @@ function onePlayerGame() {
                     pastMoves.push('row3-col1');
                 } else if (row3col2 == turn && row2col2 == turn && row1col2 == '') {
                     let go = document.createTextNode(comp);
-                    document.getElementById('row1-col3').appendChild(go);
-                    pastMoves.push('row1-col3');
+                    document.getElementById('row1-col2').appendChild(go);
+                    pastMoves.push('row1-col2');
                 } else if (row3col2 == turn && row3col1 == turn && row3col3 == '') {
                     let go = document.createTextNode(comp);
                     document.getElementById('row3-col3').appendChild(go);
@@ -253,8 +253,8 @@ function onePlayerGame() {
                     pastMoves.push('row3-col2');
                 } else if (row1col1 == turn && row3col1 == turn && row2col1 == '') {
                     let go = document.createTextNode(comp);
-                    document.getElementById('row2-col2').appendChild(go);
-                    pastMoves.push('row2-col2');
+                    document.getElementById('row2-col1').appendChild(go);
+                    pastMoves.push('row2-col1');
                 } else if (row1col2 == turn && row3col2 == turn && row2col2 == '') {
                     let go = document.createTextNode(comp);
                     document.getElementById('row2-col2').appendChild(go);
